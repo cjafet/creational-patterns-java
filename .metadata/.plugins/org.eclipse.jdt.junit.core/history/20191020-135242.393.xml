@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="Rerun br.com.espacomei.SegmentRestControllerTest.givenSegments_whenList_thenReturnJsonArray" project="espacomei-backend" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testcase name="givenSegments_whenList_thenReturnJsonArray" classname="br.com.espacomei.SegmentRestControllerTest" time="0.214"/>
+</testrun>

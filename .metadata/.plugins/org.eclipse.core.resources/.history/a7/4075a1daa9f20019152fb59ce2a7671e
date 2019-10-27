@@ -1,0 +1,56 @@
+package br.com.espacomei;
+
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.junit.Assert.assertThat;
+
+import java.util.Optional;
+import java.util.UUID;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.Mockito;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import br.com.espacomei.model.Segments;
+import br.com.espacomei.model.accounts.Segment;
+import br.com.espacomei.repository.segments.SegmentRepository;
+
+@RunWith(SpringRunner.class)
+public class SegmentsServiceTest {
+	
+	private static final UUID NULL = null;
+
+	@Autowired
+	private Segments segmentsService;
+	
+	@MockBean
+    private SegmentRepository segmentRepository;
+	
+	private UUID id = NULL;
+	
+	private Optional<Segment> seg;
+	
+	private Segment segment;
+	
+	@Before
+	public void setUp() {
+		segment = new Segment(id, "Revistaria, banca e jornal");
+	    Optional<Segment> segFromRepository = segmentRepository.findById(segment.getId());
+	 
+	    Mockito.when(segFromRepository)
+	      .thenReturn(seg);
+	}
+	
+	@Test
+	public void whenValidId_thenSegmentShouldBeFound() {
+	    
+		Optional<Segment> found = segmentsService.getSegmentById(segment.getId());
+	    
+	    assertThat(found.get().getDescription(), equalTo(segment.getDescription()));
+	  
+	 }
+
+}

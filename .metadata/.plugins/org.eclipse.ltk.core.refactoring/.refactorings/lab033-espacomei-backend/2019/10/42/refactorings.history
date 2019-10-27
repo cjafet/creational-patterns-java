@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;lab033-espacomei-backend/src/main/java/br/com/espacomei/controllers&apos; to &apos;controller&apos;" description="Rename resource &apos;controllers&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/java/br/com/espacomei/controllers" name="controller" stamp="1571270310723" updateReferences="true"/>
+</session>

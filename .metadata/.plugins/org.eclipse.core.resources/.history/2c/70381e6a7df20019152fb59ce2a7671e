@@ -1,0 +1,10 @@
+server.port=7000
+spring.jpa.database=postgresql
+spring.datasource.platform=postgres
+spring.datasource.url=jdbc:postgresql://localhost:5432/espacomei_dev
+spring.datasource.username=postgres
+spring.datasource.password=
+spring.jpa.show-sql=true
+spring.jpa.generate-ddl=true
+spring.jpa.hibernate.ddl-auto=create
+spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation=true

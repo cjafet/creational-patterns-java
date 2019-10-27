@@ -1,0 +1,11 @@
+package main.java.com.cjafet.builder;
+
+public class BuildOrder {
+
+	public static void main (String args[]) {
+		CreateOrder.Builder order = new CreateOrder.Builder();
+		
+		
+		
+	}
+}

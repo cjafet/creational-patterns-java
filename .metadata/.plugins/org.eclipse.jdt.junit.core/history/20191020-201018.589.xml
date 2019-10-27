@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="SegmentRestControllerTest" project="espacomei-backend" tests="2" started="2" failures="0" errors="0" ignored="0">
+  <testsuite name="br.com.espacomei.controller.SegmentRestControllerTest" incomplete="true">
+    <testcase name="givenSegments_whenList_thenReturnJsonArray" classname="br.com.espacomei.controller.SegmentRestControllerTest" time="0.0"/>
+    <testcase name="givenSegmentId_whengetSegmentById_thenReturnSegment" classname="br.com.espacomei.controller.SegmentRestControllerTest" incomplete="true"/>
+  </testsuite>
+</testrun>

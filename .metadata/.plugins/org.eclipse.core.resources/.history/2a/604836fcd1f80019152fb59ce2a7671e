@@ -1,0 +1,15 @@
+package main.java.com.cjafet.singleton;
+
+public class LazyLoadingSingleton {
+	
+	private static LazyLoadingSingleton instance = null;
+	
+	private LazyLoadingSingleton() {
+		
+	}
+	
+	public static getInstance() {
+		return new LazyLoadingSingleton();
+	}
+
+}

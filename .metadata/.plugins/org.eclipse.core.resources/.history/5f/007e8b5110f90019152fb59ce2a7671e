@@ -1,0 +1,57 @@
+package main.java.com.cjafet.builder;
+
+public class CreateOrder {
+	
+	public static class Builder {
+		private float price;
+		private String currency;
+		private int volume;
+		
+		public Builder() {
+			
+		}
+		
+		public CreateOrder build( ) {
+			return new CreateOrder(this);
+		}
+		
+		public Builder price(float price) {
+			this.price = price;
+			return this; // return a build object
+		}
+		
+		public Builder currency(String currency) {
+			this.currency = currency;
+			return this; // return a build object
+		}
+		
+		public Builder volume(int volume) {
+			this.volume = volume;
+			return this; // return a build object
+		}	
+		
+	}
+	
+	private final float price;
+	private final String currency;
+	private final int volume;
+	
+	private CreateOrder(Builder builder) {
+		this.price = builder.price;
+		this.currency = builder.currency;
+		this.volume = builder.volume;
+	}
+	
+	public float getPrice( ) {
+		return price;
+	}
+	
+	public String getCurrency( ) {
+		return currency;
+	}
+	
+	public int getVolume( ) {
+		return volume;
+	}
+
+}

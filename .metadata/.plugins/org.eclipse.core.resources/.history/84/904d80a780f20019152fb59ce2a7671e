@@ -1,0 +1,15 @@
+package br.com.espacomei.repository.segments;
+
+import java.util.List;
+import java.util.UUID;
+
+import org.springframework.data.repository.CrudRepository;
+
+import br.com.espacomei.model.accounts.Segment;
+
+
+public interface SegmentRepository extends CrudRepository<Segment, UUID> {
+	
+	List<Segment> findAll(); 
+
+}

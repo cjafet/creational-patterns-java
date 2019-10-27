@@ -1,0 +1,44 @@
+package br.com.espacomei;
+
+import static org.junit.Assert.assertThat;
+
+import java.util.Optional;
+import java.util.UUID;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import br.com.espacomei.model.accounts.Segment;
+import br.com.espacomei.repository.segments.SegmentRepository;
+import org.hamcrest.Matcher;
+
+
+@RunWith(SpringRunner.class)
+public class SegmentRepositoryIntegrationTest {
+	
+	@Autowired
+    private TestEntityManager entityManager;
+	
+	@Autowired 
+	SegmentRepository segmentRepository;
+	
+	private UUID id = UUID.randomUUID();
+	
+	@Test
+	public void whenFindByName_thenReturnEmployee() {
+	    // given
+	    Segment seg = new Segment(id, "Outros");
+	    entityManager.persist(seg);
+	    entityManager.flush();
+	 
+	    // when
+	    Optional<Segment> found = segmentRepository.findById(seg.getId());
+	 
+	    // then
+	    assertThat(found.get().getDescription(), containsString("Outros"));
+	}
+
+}
